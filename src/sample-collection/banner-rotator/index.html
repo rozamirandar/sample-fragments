@@ -1,0 +1,66 @@
+<div class="banner-slider component-slider">
+	<div class="slide" id="">
+		<ol class="carousel-indicators">
+			[#list 1..configuration.numberOfSlides as x ]
+				<li data-target="#" data-slide-to="${x}" class="${(x == 1)?then('active', '')}"></li>
+			[/#list]
+		</ol>
+
+		<div class="carousel-inner text-break">
+			[#list 1..configuration.numberOfSlides as x ]
+				<div class="carousel-item ${(x == 1)?then('active', '')}">
+					<div class="banner-image-wrapper">
+						<lfr-editable id="0${x}-01-image" type="image">
+							<img alt="Banner image" class="image-background" src="https://via.placeholder.com/1200x312?text=%20" />
+						</lfr-editable>
+					</div>
+
+					<div class="carousel-caption d-flex align-items-center">
+						<div class="container">
+							<div class="row">
+								<div class="col-12 col-md-12 col-xl-12 mb-2 text-left title-position-${x}">
+									<h1>
+										<lfr-editable id="0${x}-02-title" type="rich-text">
+											Slide Title
+										</lfr-editable>
+									</h1>
+								</div>
+
+								<div class="col-12 col-md-12 col-xl-12 mb-2 text-left subtitle-position-${x}">
+									<div class="lead">
+										<p>
+											<lfr-editable id="0${x}-03-subtitle" type="rich-text">
+												This is an slider component that you can use when you need extra attention
+												to featured content or
+												information.
+											</lfr-editable>
+										</p>
+									</div>
+								</div>
+
+								<div class="col-12 col-md-12 col-xl-12 text-right button-position-${x} carousel-item-button">
+									<lfr-editable id="0${x}-04-link" type="link">
+										<a
+											class="btn btn-primary" href=""
+											id="fragment-${fragmentEntryLinkNamespace}-0${x}-04-link">Learn more</a
+										>
+									</lfr-editable>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			[/#list]
+		</div>
+
+		<a class="carousel-control carousel-control-prev" data-slide="prev" href="#" role="button">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+
+		<a class="carousel-control carousel-control-next" data-slide="next" href="#" role="button">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+</div>
